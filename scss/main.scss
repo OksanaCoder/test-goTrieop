@@ -1,0 +1,350 @@
+$primary-color: linear-gradient(#FF7B4E,#FF584E);
+$secondary-color: #FFFFFF;
+$grey-color: #0F1F1C;
+$bg-color: #E5E5E5;
+$breakpoint-mobile: 480px;
+
+
+$font-15: 15px;
+$font-18: 18px;
+$font-20 : 20px;
+$font-22 : 22px;
+$font-25 : 25px;
+$font-30 : 30px;
+$font-33 : 33px;
+$font-45: 45px;
+$font-55: 55px;
+
+$m-30 : 30px;
+
+@mixin flex-no-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flex-center-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+@mixin flex-center-style {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+   font-family: 'Poppins', sans-serif;
+   background-color: $bg-color;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+a:hover {
+    border-bottom: 2px solid #fff;
+}
+button {
+    border: none;
+}
+.header {
+    
+    background-image: url('../assets/images/bg-header.png');
+    background-repeat: no-repeat;
+    background-size: cover;  // Ensure the background covers the entire area
+    background-position: center center;  // Center the background image
+    padding: 20px;
+    
+    height: 1000px;
+   &__navbar {
+   @include flex-no-wrap;
+   
+        &--mobile {
+            display: block;
+            &__close-btn {
+                display: none;
+                @media screen and (max-width: $breakpoint-mobile) {
+                display: block;
+                color: #fff; 
+                font-size: $font-18;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+                &.show {
+                   display: block;
+                   background-color: #000; // Set the background color
+                   position: fixed; // Fixed position to cover the entire viewport
+                   top: 0;
+                   left: 0;
+                   width: 100%;
+                   height: 100%;
+                   z-index: 1000; 
+                   padding: 20px; 
+                      
+                  }
+            
+            @media screen and (max-width: $breakpoint-mobile) {
+                display: none;
+              
+                
+        }
+     }
+     &__burger-icon {
+        display: none;
+        @media screen and (max-width: $breakpoint-mobile) {
+            cursor: pointer;
+            width: 30px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        
+            &__bar {
+              width: 100%;
+              height: 3px;
+              background-color: #fff;
+            }
+    }
+            
+          
+     }
+    
+    &__logo {
+        @media screen and (max-width: $breakpoint-mobile) {
+            display: none;
+        }
+        font-size: $font-20;
+        color: #fff;
+    }
+    &--align-row {
+        list-style: none;
+        @include flex-center-style;
+        @media screen and (max-width: $breakpoint-mobile) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 100px;
+            
+        }
+       
+         li {
+            margin-right: 50px;
+            font-size: $font-15;
+            @media screen and (max-width: $breakpoint-mobile) {
+            font-size: 20px;
+            margin-bottom: 20px;
+            }
+         }
+       }
+   }
+   &__btn_group{
+    
+    &--primary {
+    background:$primary-color ;
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 20px;
+   }
+   &--no-outline {
+    color: #fff;
+    background: none;
+    padding: 10px;
+   }
+}
+&__jumbotron {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    justify-content: center;
+    height: 100%;  
+    width: 500px;
+    @media screen and (max-width: $breakpoint-mobile) {
+        width: 100%;
+      }
+    
+    &__btn {
+        &--transparent {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: $font-18;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin-bottom: $m-30;
+
+            
+        }
+        &--primary {
+            background: $primary-color;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: $font-18;
+            color: #fff;
+        }
+    }
+    &__title {
+        margin-bottom: $m-30;
+        font-size: $font-55;
+    }
+    &__text {
+        margin-bottom: $m-30;
+        font-size: $font-25;
+        color: $secondary-color;
+    }
+   
+}
+   
+}
+
+.about {
+    padding: 20px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include flex-no-wrap;
+    @media screen and (max-width: $breakpoint-mobile) {
+        @include flex-center-style;
+      }
+    &__container {
+        width: 50%;
+        @media screen and (max-width: $breakpoint-mobile) {
+            width: 100%;
+          }
+        &__pretitle {
+            color: #000;
+            font-size: $font-30;
+            margin-bottom: $m-30;
+        }
+        &__title {
+            margin-bottom: $m-30;
+            font-size: $font-55;
+        }
+        &__text {
+            margin-bottom: $m-30;
+            font-size: $font-25;
+            color: $grey-color;
+        }
+        &__btn {
+           
+            &--primary {
+                background: $primary-color;
+                padding: 15px 25px;
+                border: none;
+                border-radius: 10px;
+                font-size: $font-20;
+                color: #fff;
+            }
+        }
+    }
+   &__carousel {
+    position: relative;
+    }
+    &__carousel-container {
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        width: 80%;
+        max-width: 1200px; 
+        &__btn--prev {
+            position: absolute;
+            left: 40px;
+            cursor: pointer; 
+            top: 40%;
+            background: $primary-color;
+            border: none;
+            border-radius: 50%;
+            padding: 15px 18px;
+            z-index: 999;
+        }
+      }
+      
+      &__carousel-list {
+
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+     li {
+        width: 100%;
+        margin-right: 20px;  
+      }
+     
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      &__imageBig {
+        height: 400px !important;
+      }
+      
+    }
+   
+}
+.reviews {
+    margin-top: 100px;
+    padding: 20px;
+    &__container {
+        @include flex-center-wrap;
+        &__info {
+            width: 50%;
+            @media screen and (max-width: $breakpoint-mobile) {
+                width: 100%;
+              }
+        }
+        &__img {
+            width: 90%;
+            text-align: right;
+            @media screen and (max-width: $breakpoint-mobile) {
+                width: 100%;
+              }
+        }
+        &__heading {
+            font-size: $font-45;
+            font-weight: 200;
+        }
+        &__person {
+            display: flex;
+            align-items: center;
+            margin: 40px 0 40px;
+            @media screen and (max-width: $breakpoint-mobile) {
+                flex-wrap: wrap;
+              }
+            
+            img {
+                height: 100px;
+                background: $primary-color;
+                border-radius: 50%;
+                margin-right: 30px ;
+            }
+            &__name {
+                font-size: $font-33;
+            }
+            &__city {
+                font-size: $font-25;
+                color: $grey-color;
+                font-weight: 200;
+            }
+            &__comment {
+                font-size: $font-22;
+                color: $grey-color;
+                font-weight: 200;
+                margin-bottom: 40px;
+            }
+        }
+    }
+   }
+   

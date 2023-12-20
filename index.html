@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./scss/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <title>Test</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__navbar">
+        <h6 class="header__navbar__logo">GoTrieop</h6>
+        <div class="header__navbar__burger-icon" id="burgerIcon">
+          <div class="header__navbar__burger-icon__bar"></div>
+          <div class="header__navbar__burger-icon__bar"></div>
+          <div class="header__navbar__burger-icon__bar"></div>
+        </div>
+        <nav class="header__navbar--mobile">
+          <div class="header__navbar--mobile__close-btn" id="closeBtn">
+            x
+          </div>
+        <ul class="header__navbar--align-row">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        </nav>
+        <div class="header__btn_group">
+          <button class="header__btn_group--no-outline">Sign up</button>
+          <button class="header__btn_group--primary">Login</button>
+        </div>
+      </div>
+      <div class="header__jumbotron">
+     
+          <button class="header__jumbotron__btn--transparent">explore the world</button>
+          <h2 class="header__jumbotron__title">Explore The Natural Beauty Of Halmahera With Us</h2>
+          <p class="header__jumbotron__text">
+            explore the beauty of god's earth in a beautiful forest and have fun
+          </p>
+          <button class="header__jumbotron__btn--primary">Explore now</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="about">
+        <div class="about__container">
+          <h4 class="about__container__pretitle">Choice Of</h4>
+          <h3 class="about__container__title">Destinations</h3>
+          <p class="about__container__text">
+            explore the beauty of god's earth in a beautiful forest and have fun
+          </p>
+          <button class="about__container__btn--primary">Explore now</button>
+        </div>
+        <div class="about__carousel">
+          <button id="prevButton" class="about__carousel-container__btn--prev">
+            <img src="./assets/images/arrow-left.svg" alt="arrow left"/>
+          </button>
+           <div class="about__carousel-container">
+            <ul class="about__carousel-list">
+              <li><img src="./assets/images/image1.png" alt="Image 1"></li>
+              <li><img src="./assets/images/image2.png" alt="Image 2" class="about__carousel-list__imageBig"></li>
+              <li><img src="./assets/images/image1.png" alt="Image 1"></li>
+             </ul>
+          </div>
+        </div>
+      
+      </section>
+      <section class="reviews">
+        <div class="reviews__container">
+          <div>
+            <img src='./assets/images/review.png' alt="person" class="reviews__container__img"/>
+          </div>
+          <div class="reviews__container__info">
+            <h4 class="reviews__container__heading">What do customers say about us?</h4>
+            <div class="reviews__container__person">
+              <img src="./assets/images/person.png" alt="person" />
+              <div>
+                <h6 class="reviews__container__person__name">Alpanasap</h6>
+                <p class="reviews__container__person__city">Japung, Indonesia</p>
+              </div>
+            </div>
+            <p class="reviews__container__person__comment">Very satisfying service makes it comfortable, a beautiful place in the world. </p>
+            <div>
+              <img src="./assets/images/star-active.png" alt="star" />
+              <img src="./assets/images/star-active.png" alt="star" />
+              <img src="./assets/images/star-active.png" alt="star" />
+              <img src="./assets/images/star.png" alt="star" />
+              <img src="./assets/images/star.png" alt="star" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/carousel.js" defer></script>
+    <script src="./js/burgerMenu.js" defer></script>
+  </body>
+</html>
